@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model package="modvkmarket" baseClass="xPDOObject" platform="mysql" defaultEngine="MyISAM" phpdoc-package="modvkmarket"
+	   version="1.1">
+
+	<object class="modVkMarketSync" table="modvkmarket_sync" extends="xPDOSimpleObject">
+		<field key="object_id" dbtype="int" precision="10" phptype="string" null="false" default=""/>
+		<field key="group_ids" dbtype="text" phptype="json" null="true" default=""/>
+		<field key="processed" dbtype="tinyint" precision="1" phptype="boolean" null="true" default="1"/>
+
+		<index alias="object_id" name="object_id" primary="false" unique="true" type="BTREE">
+			<column key="object_id" length="" collation="A" null="false"/>
+		</index>
+		<index alias="processed" name="processed" primary="false" unique="false" type="BTREE">
+			<column key="processed" length="" collation="A" null="false"/>
+		</index>
+	</object>
+	
+	<object class="modVkMarketCategory" table="modvkmarket_categories" extends="xPDOSimpleObject">
+		<field key="id" dbtype="int" precision="10" attributes="unsigned" phptype="integer" null="false" index="pk" generated="native" />
+		<field key="vkgroup_id" dbtype="int" phptype="10" null="false" />
+		<field key="cat_ids" dbtype="varchar" precision="255" phptype="string" null="false" />
+		<field key="resource_ids" dbtype="varchar" precision="255" phptype="string" null="false" />
+	</object>
+
+</model>
