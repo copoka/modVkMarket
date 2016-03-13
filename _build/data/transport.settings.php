@@ -18,6 +18,11 @@ $tmp = array(
 		'value' => 'vRHLuNqIYm8FVgdNJ07T',
 		'area'  => 'modvkmarket_vksetting'
 	),
+	'desc_field' => array(
+		'xtype' => 'textfield',
+		'value' => 'introtext',
+		'area'  => 'modvkmarket_main'
+	),
 	'goods_clear_limit' => array(
 		'xtype' => 'textfield',
 		'value' => '20',
