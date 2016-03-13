@@ -33,6 +33,7 @@ class modVkMarketGetlistProcessor extends modObjectProcessor {
 			$total += $results[0];
 			unset($results[0]);
 			foreach($results as $key=>$result){
+				$result['url'] = 'https://vk.com/club'.$cat->get('vkgroup_id').'?w=product-'.$cat->get('vkgroup_id').'_'.$result['id'];
 				$result['actions'] = array();
 				$result['group_id'] = $cat->get('vkgroup_id');
 				$res[] = $result;
