@@ -57,8 +57,9 @@ class modVkMarketSyncProcessor extends modObjectProcessor {
 					$object_id = $product->get('id');
 					$name = $product->get('pagetitle');
 					$price = $product->get('price');
-					$description = $product->get($introtext);
 
+					$tmp = $product->getTVValue($introtext);
+					$description = !empty($tmp) ? $tmp : $product->get($introtext);
 					$description .= "\r\n".$this->modx->getOption('site_url').$product->get('uri');
 
 					if(mb_strlen($description) < 10 || mb_strlen($name) < 2 || !$price){
