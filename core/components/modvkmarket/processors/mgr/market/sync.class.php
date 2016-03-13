@@ -11,6 +11,7 @@ class modVkMarketSyncProcessor extends modObjectProcessor {
 
         $vk = $this->modx->modvkmarket->config['vk'];
         $limit = $this->modx->getOption('modvkmarket_goods_sync_limit');
+        $introtext = $this->modx->getOption('modvkmarket_desc_field', $config, 'introtext');
 
         $miniShop2 = $this->modx->getService('minishop2','miniShop2',
             MODX_CORE_PATH . 'components/minishop2/model/minishop2/');
@@ -56,7 +57,7 @@ class modVkMarketSyncProcessor extends modObjectProcessor {
 					$object_id = $product->get('id');
 					$name = $product->get('pagetitle');
 					$price = $product->get('price');
-					$description = $product->get('introtext');
+					$description = $product->get($introtext);
 
 					$description .= "\r\n".$this->modx->getOption('site_url').$product->get('uri');
 
