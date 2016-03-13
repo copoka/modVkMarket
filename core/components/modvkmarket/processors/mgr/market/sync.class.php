@@ -165,12 +165,12 @@ class modVkMarketSyncProcessor extends modObjectProcessor {
 				return $this->prepareResponse(true, $msg, $level, $continue);
 
 			}
-
-			$msg = "Сихронизация завершена";
-			$continue = false;
-			$level = xPDO::LOG_LEVEL_INFO;
-			return $this->prepareResponse(true, $msg, $level, $continue);
 		}
+
+		$msg = "Сихронизация завершена";
+		$continue = false;
+		$level = xPDO::LOG_LEVEL_INFO;
+		return $this->prepareResponse(true, $msg, $level, $continue);
     }
 
     protected function prepareResponse($success, $msg = '', $level = xPDO::LOG_LEVEL_INFO, $continue = false){
